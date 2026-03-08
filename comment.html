@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comment Box</title>
+    <style>
+        .comment {
+            border: 2px solid #616af1;
+            background-color: #b0cef1;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+        }
+        #cmt-box,#btn-add {
+            border: 2px solid #616af1;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+        h1{
+            text-align: center;
+            
+            background-color: #f0cee3;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Awesome Comment Box</h1>
+    <h3>All Comments Are Displayed Here</h3>
+    <section id="cmt-container">
+        <p class="comment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptas architecto laborum dolor, sit maiores aut laudantium quaerat cum assumenda, eligendi accusantium modi possimus rem? Sapiente, maiores ea reiciendis ab magni velit vel quae suscipit. Unde dolorem tenetur pariatur quasi.</p>
+
+        <p class="comment">Eaque eius veniam nemo voluptates exercitationem reprehenderit obcaecati voluptatibus illum sapiente repudiandae facere excepturi facilis rem, vitae ea velit nobis fuga architecto modi ratione id blanditiis? Quo, sit. Optio, incidunt ducimus voluptate architecto natus repudiandae possimus saepe officia fugiat tempore!</p>
+
+        <p class="comment">Quasi optio, sunt excepturi libero dolorum dolor dicta deserunt, accusantium nulla exercitationem eaque doloremque sint officia. Beatae consequuntur dolor fugiat similique sequi cupiditate amet! Esse architecto sapiente officia ipsam, non nobis est aut repellat et laborum nulla, cupiditate, asperiores quisquam!</p>
+
+        
+    </section>
+
+    <textarea id="cmt-box" name="" id="" cols="100" rows="4"></textarea>
+        <br>
+        <button id="btn-add">Add Comment</button>
+
+    <script>
+            document.getElementById('btn-add').addEventListener('click',function(){
+                const cmt=document.getElementById('cmt-box').value;
+                cmtContainer=document.getElementById('cmt-container');
+                const newCmt=document.createElement('p');
+                newCmt.classList.add('comment');
+                newCmt.innerText=cmt;
+                cmtContainer.appendChild(newCmt);
+
+                const cmtBox = document.getElementById('cmt-box');
+                cmtBox.value = '';
+            })
+        </script>
+</body>
+</html>
